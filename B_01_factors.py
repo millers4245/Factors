@@ -33,6 +33,11 @@ def num_check(question):
         except ValueError:
             print(error)
 
+def factor(var_to_factor)
+    
+
+
+
 
 # Main Routine
 
@@ -45,8 +50,46 @@ if want_instructions == "":
     instructions()
 
 while True:
+
+    comment = ""
+
     to_factor = num_check("To factor: ")
     print("You chose to factor", to_factor)
 
     if to_factor == "xxx":
         break
+
+    # get factors for integers that are 2 or more
+    elif to_factor != 1:
+        all_factors = factors(to_factor)
+
+    #set up comment for unity
+    else:
+        all_factors = ""
+        comment = "One is UNITY, it only has one factor. itself :P"
+
+    # comments for square / primes
+        
+    # Prime numbers have only two factors
+    if len(all_factors) == 2:
+        comment = f"{to_factor} is a prime number"
+
+    # check if the list has an odd number of factors
+    elif len(all_factors) % 2 == 1:
+        comment = f"{to_factor} is a perfect square"
+
+    # set up headings
+    if to_factor > 1:
+        heading = f"Factors of {to_factor}"
+    else:
+        heading = "One is special"
+
+    # output factors and comment
+    print()
+    statement_generator(heading, "*")
+    print(all_factors)
+    print(comment)
+
+print("Thank you for using the factors calculator")
+
+
