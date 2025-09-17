@@ -33,18 +33,21 @@ def num_check(question):
         except ValueError:
             print(error)
 
-def factor(var_to_factor)
-    
-
-
+# Generate all factors of a number
+def factors(var_to_factor):
+    factor_list = []
+    for i in range(1, var_to_factor + 1):
+        if var_to_factor % i == 0:
+            factor_list.append(i)
+    return factor_list
 
 
 # Main Routine
 
 statement_generator("The Ultimate Factor Finder", "-")
 
-want_instructions= input("\nPress <enter> to read the instructions "
-                         "or any key to continue")
+want_instructions = input("\nPress <enter> to read the instructions "
+                          "or any key to continue")
 
 if want_instructions == "":
     instructions()
@@ -63,18 +66,15 @@ while True:
     elif to_factor != 1:
         all_factors = factors(to_factor)
 
-    #set up comment for unity
+    # set up comment for unity
     else:
         all_factors = ""
         comment = "One is UNITY, it only has one factor. itself :P"
 
     # comments for square / primes
-        
-    # Prime numbers have only two factors
     if len(all_factors) == 2:
         comment = f"{to_factor} is a prime number"
 
-    # check if the list has an odd number of factors
     elif len(all_factors) % 2 == 1:
         comment = f"{to_factor} is a perfect square"
 
@@ -89,7 +89,3 @@ while True:
     statement_generator(heading, "*")
     print(all_factors)
     print(comment)
-
-print("Thank you for using the factors calculator")
-
-
